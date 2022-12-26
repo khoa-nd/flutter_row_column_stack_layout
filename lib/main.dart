@@ -93,15 +93,16 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            const Text("Hang thu nhat"),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              Text("Hang thu hai 1"),
+              Text("Hang thu hai 2"),
+            ]
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            const Text("Hang thu ba bold 1"),
           ],
         ),
       ),
