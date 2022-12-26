@@ -95,14 +95,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Text("Hang thu nhat"),
+            const Text("Hang thu nhat", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
-              Text("Hang thu hai 1"),
-              Text("Hang thu hai 2"),
+              Text("Hang thu hai 1", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
+              Text("Hang thu hai 2", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
             ]
             ),
-            const Text("Hang thu ba bold 1"),
+            const Text("Hang thu ba bold 1", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
           ],
         ),
       ),
