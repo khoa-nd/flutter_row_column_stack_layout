@@ -31,24 +31,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            const Text("Hang thu nhat", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              Text("Hang thu hai 1", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
-              Text("Hang thu hai 2", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
-            ]
-            ),
-            const Text("Hang thu ba bold 1", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
+        child: Container(
+          margin: const EdgeInsets.only(top: 100.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              const Text("Hang thu nhat", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                Text("Hang thu hai 1", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
+                Text("Hang thu hai 2", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
+              ]
+              ),
+              const Text("Hang thu ba bold 1", style: TextStyle(fontSize: 24.0), textAlign: TextAlign.center),
           ],
         ),
-      )
+      )),
     );
   }
 }
