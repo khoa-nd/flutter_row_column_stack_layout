@@ -35,54 +35,68 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
           child: Container(
-            margin: const EdgeInsets.only(top: 100.0, left: 20.0, right: 20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+        margin: const EdgeInsets.only(top: 100.0, left: 20.0, right: 20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5.0),
+                child: Text("Hang thu nhat",
+                    style: TextStyle(fontSize: 24.0, color: Colors.grey),
+                    textAlign: TextAlign.center)),
+            Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Text("Hang thu hai 1",
+                          style: TextStyle(fontSize: 24.0, color: Colors.grey),
+                          textAlign: TextAlign.center),
+                      Text("Hang thu hai 2",
+                          style: TextStyle(fontSize: 24.0, color: Colors.grey),
+                          textAlign: TextAlign.center),
+                    ])),
+            const Padding(
+                padding: EdgeInsets.symmetric(vertical: 5.0),
+                child: Text.rich(
+                  TextSpan(
+                      text: 'Hang thu ba ',
+                      style: TextStyle(fontSize: 20.0, color: Colors.grey),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'bold 1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.yellow),
+                        )
+                      ]),
+                )),
+            const Divider(
+              thickness: 5.0,
+            ),
+            Stack(
+              // Note: Stack widget gets max. size of its children. But overlapping shapes are exceeding
+              // Stack's size therefore it leads to shape was clipped.
+              // We need to set clipBehavior: none so that Stack allows its children expanded outside.
+              clipBehavior: Clip.none,
               children: <Widget>[
-                const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5.0),
-                    child: Text("Hang thu nhat",
-                        style: TextStyle(fontSize: 24.0, color: Colors.grey),
-                        textAlign: TextAlign.center)),
-                Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          Text("Hang thu hai 1",
-                              style: TextStyle(fontSize: 24.0, color: Colors.grey),
-                              textAlign: TextAlign.center),
-                          Text("Hang thu hai 2",
-                              style: TextStyle(fontSize: 24.0, color: Colors.grey),
-                              textAlign: TextAlign.center),
-                        ])),
-                const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5.0),
-                    child: Text.rich(
-                      TextSpan(
-                          text: 'Hang thu ba ',
-                          style: TextStyle(fontSize: 20.0, color: Colors.grey),
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: 'bold 1',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.yellow),
-                            )
-                          ]),
-                    )),
-                const Divider(
-                  thickness: 5.0,
-                ),
-                Stack(
-                  alignment: AlignmentDirectional.topStart,
-                  children: <Widget>[
-                    Positioned(child: Container(width: 100, height: 100, color: Colors.green)),
-                    Positioned(top: 50, left: 50, child: Container(width: 100, height: 100, color: Colors.red)),
-                    Container()
-                  ],
-                )
+                Positioned(
+                    child: Container(
+                        width: 100, height: 100, color: Colors.green)),
+                Positioned(
+                    top: 50,
+                    left: 50,
+                    child:
+                        Container(width: 100, height: 100, color: Colors.red)),
+                Positioned(
+                    top: 100,
+                    left: 100,
+                    child: Container(
+                        width: 100, height: 100, color: Colors.yellow)),
+                Container()
               ],
+            )
+          ],
         ),
       )),
     );
