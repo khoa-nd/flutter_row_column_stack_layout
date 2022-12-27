@@ -39,22 +39,16 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Padding(
-                padding: EdgeInsets.symmetric(vertical: 5.0),
-                child: Text("Hang thu nhat",
-                    style: TextStyle(fontSize: 24.0, color: Colors.grey),
-                    textAlign: TextAlign.center)),
+            Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                child: _buildCustomTextWidget("Hang thu nhat")),
             Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5.0),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
-                      Text("Hang thu hai 1",
-                          style: TextStyle(fontSize: 24.0, color: Colors.grey),
-                          textAlign: TextAlign.center),
-                      Text("Hang thu hai 2",
-                          style: TextStyle(fontSize: 24.0, color: Colors.grey),
-                          textAlign: TextAlign.center),
+                    children: [
+                      _buildCustomTextWidget("Hang thu hai 1"),
+                      _buildCustomTextWidget("Hang thu hai 2"),
                     ])),
             const Padding(
                 padding: EdgeInsets.symmetric(vertical: 5.0),
@@ -100,5 +94,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       )),
     );
+  }
+
+  Widget _buildCustomTextWidget(String title) {
+    return Text(title,
+        style: const TextStyle(fontSize: 24.0, color: Colors.grey),
+        textAlign: TextAlign.center);
   }
 }
