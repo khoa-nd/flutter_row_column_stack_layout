@@ -74,19 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
               // We need to set clipBehavior: none so that Stack allows its children expanded outside.
               clipBehavior: Clip.none,
               children: <Widget>[
-                Positioned(
-                    child: Container(
-                        width: 100, height: 100, color: Colors.green)),
-                Positioned(
-                    top: 50,
-                    left: 50,
-                    child:
-                        Container(width: 100, height: 100, color: Colors.red)),
-                Positioned(
-                    top: 100,
-                    left: 100,
-                    child: Container(
-                        width: 100, height: 100, color: Colors.yellow)),
+                _buildCustomPositionedWidget(0, 0, 100, 100, Colors.green),
+                _buildCustomPositionedWidget(50, 50, 100, 100, Colors.red),
+                _buildCustomPositionedWidget(100, 100, 100, 100, Colors.yellow),
                 Container()
               ],
             )
@@ -100,5 +90,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Text(title,
         style: const TextStyle(fontSize: 24.0, color: Colors.grey),
         textAlign: TextAlign.center);
+  }
+
+  Widget _buildCustomPositionedWidget(double? top, double? left, double? width, double? height, Color color) {
+    return Positioned(
+        top: top,
+        left: left,
+        child:
+        Container(width: width, height: height, color: color));
   }
 }
