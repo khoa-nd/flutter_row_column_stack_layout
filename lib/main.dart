@@ -73,6 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 )),
             const Divider(
               thickness: 5.0,
+            ),
+            Stack(
+              children: <Widget>[
+                Positioned(child: Container(width: 100, height: 100, color: Colors.green)),
+                Positioned(top: 50, left: 50, child: Container(width: 100, height: 100, color: Colors.red)),
+                Container(),
+              ],
             )
           ],
         ),
